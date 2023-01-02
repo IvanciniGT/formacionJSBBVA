@@ -1,5 +1,5 @@
-const estadoPartida = require("./estado-partida");
-const Partida = require("./partida");
+const estadoPartida = require("../../estado-partida");
+const Partida = require("../../partida");
 
 class PartidaConsola extends Partida{
     mostrarResultadoPartida(resultado){

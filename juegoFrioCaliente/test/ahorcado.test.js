@@ -77,3 +77,21 @@ describe('Probar la comprobarción de una letra', function () {
 });
 
 
+
+describe('Leer Fichero de palabras', function () {
+    it('Al pasar el fichero de paises, se debe leer adecuadamente', async function () {
+        const contenido= await utilidadesAhorcado.leerFichero("resources/paises.txt");
+        assert.equal(contenido.length>100, true)
+    })
+});
+      
+
+describe('Leer Fichero de paises y elegir uno al azar', function () {
+    it('Al pasar el fichero de paises, se debe leer adecuadamente', async function () {
+        const pais= await utilidadesAhorcado.elegirPalabra("resources/paises.txt");
+        const contenido= await utilidadesAhorcado.leerFichero("resources/paises.txt");
+        console.log(pais)
+        assert.equal(contenido.includes(pais), true)
+    })
+});
+      

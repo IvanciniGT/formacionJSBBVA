@@ -23,9 +23,6 @@ class JuegoAhorcado extends Juego {
             //  Descuento vida y a por otro intento
     }
     
-    elegirPalabra(){
-        
-    }
     
     
 ///    

@@ -1,9 +1,12 @@
 const Juego = require("../../juego");
+var utilidadesAhorcado = require('./utilidades');
+
 class JuegoAhorcado extends Juego {
     
     constructor(){
         // Elegir una palabra aleatoriamente de una colección
         // Preparar una estructura adecuada de representación de datos... para juagr
+        this.estructura = utilidadesAhorcado.prepararEstructuraInicial(palabra);
     }
     
     jugar(){
@@ -25,11 +28,6 @@ class JuegoAhorcado extends Juego {
     }
     
     
-    comprobarNuevaLetra(letra){ // -> Boolean
-        
-    }
-
-
 ///    
 
     mensajeBienvenida() {

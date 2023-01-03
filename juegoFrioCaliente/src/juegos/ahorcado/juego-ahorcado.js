@@ -19,14 +19,14 @@ class JuegoAhorcado extends Juego {
 
         var acertado = false;
         // saludar al usuario y explicarle de qué va esto
-        this.mensajeBienvenida();
+        await this.mensajeBienvenida();
         
         // Mientras le queden vidas y no haya acertado:
-        while (this.vidas >=0 && ! acertado){
+        while (this.vidas >0 && ! acertado){
             // mostrar Información relevante: La palabra enmascarada, intentos que le quedan
-            this.mensajeBienvenida();
+            this.mostrarPantallaJuego();
             // Pedirle una letra
-            const letra = this.pedirLetra();
+            const letra = this.pedirLetra().toUpperCase();
             // Comprobar la letra -> Boolean
             const resultado = utilidadesAhorcado.comprobarNuevaLetra(letra,this.estructura, this.pendientes);
             this.estructura = resultado.estructura
@@ -34,10 +34,11 @@ class JuegoAhorcado extends Juego {
             // Ha acertado la letra: 
             if (resultado.encontrada){
             // Si si? Si ya tiene todo descubierto?
-                if (resultado.pendientes == 0)
+                if (resultado.pendientes == 0){
                     //          Si si? Partida acabada
+                    this.mostrarPantallaJuego();
                     return estadoPartida.GANADA;
-                else
+                }else
                     //        Si no? Otra ronda
                     continue
             }else{    

@@ -9,6 +9,7 @@
   "author": "Ivan Osuna",
   "license": "ISC",
   "dependencies": {
+    "mocha": "^10.2.0",
     "prompt-sync": "^4.2.0"
   }
 }

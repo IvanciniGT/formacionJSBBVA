@@ -5,15 +5,18 @@ const estadoPartida = require("../../estado-partida");
 class JuegoAhorcado extends Juego {
     
     constructor(fichero){
-        // Elegir una palabra aleatoriamente de una colección
-        this.palabra = utilidadesAhorcado.elegirPalabra(fichero);
-        // Preparar una estructura adecuada de representación de datos... para juagr
-        this.estructura = utilidadesAhorcado.prepararEstructuraInicial(this.palabra);
-        this.pendientes = this.palabra.length()
-        this.vidas=6
+        super()
+        this.fichero=fichero
     }
     
-    jugar(){
+    async jugar(){
+        // Elegir una palabra aleatoriamente de una colección
+        this.palabra = await utilidadesAhorcado.elegirPalabra(this.fichero);
+        // Preparar una estructura adecuada de representación de datos... para juagr
+        this.estructura = utilidadesAhorcado.prepararEstructuraInicial(this.palabra);
+        this.pendientes = this.palabra.length
+        this.vidas=6
+
         var acertado = false;
         // saludar al usuario y explicarle de qué va esto
         this.mensajeBienvenida();

@@ -4,17 +4,17 @@ const prompt = require('prompt-sync')();
 
 class JuegoAhorcadoConsola extends JuegoAhorcado {
 
-    constructor(){
-        super();
+    constructor(fichero){
+        super(fichero);
         this.leerAhorcado();
     }
 
     async leerAhorcado(){
-        this.muñecote = await utilidades.leerArchivo("../../../../resources/ahorcado.txt")
+        this.muñecote = await utilidades.leerFichero("resources/ahorcado.txt")
     }
 
     async mensajeBienvenida() {
-        const mensaje = await utilidades.leerArchivo("../../../../resources/bienvenida.txt")
+        const mensaje = await utilidades.leerFichero("resources/bienvenida.txt")
         console.log(mensaje);
     }
     

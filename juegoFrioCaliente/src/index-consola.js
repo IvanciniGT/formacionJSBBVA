@@ -4,7 +4,7 @@ const JuegoAhorcado = require('./juegos/ahorcado/gui/consola/juego-ahorcado-cons
 
 
 //new Partida(new JuegoFrioCaliente()).jugar();
-new Partida(new JuegoAhorcado("../resources/paises.txt")).jugar();
+new Partida(new JuegoAhorcado("resources/paises.txt")).jugar();
 
 
 

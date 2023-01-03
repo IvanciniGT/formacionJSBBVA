@@ -10,16 +10,16 @@ class JuegoAhorcado extends Juego {
         // Preparar una estructura adecuada de representación de datos... para juagr
         this.estructura = utilidadesAhorcado.prepararEstructuraInicial(this.palabra);
         this.pendientes = this.palabra.length()
+        this.vidas=6
     }
     
     jugar(){
-        var vidas = 6;
         var acertado = false;
         // saludar al usuario y explicarle de qué va esto
         this.mensajeBienvenida();
         
         // Mientras le queden vidas y no haya acertado:
-        while (vidas >=0 && ! acertado){
+        while (this.vidas >=0 && ! acertado){
             // mostrar Información relevante: La palabra enmascarada, intentos que le quedan
             this.mensajeBienvenida();
             // Pedirle una letra
@@ -38,7 +38,7 @@ class JuegoAhorcado extends Juego {
                     //        Si no? Otra ronda
                     continue
             }else{    
-                vidas-=1;
+                this.vidas-=1;
             }
             // Si no? 
             //  Descuento vida y a por otro intento
@@ -66,3 +66,5 @@ class JuegoAhorcado extends Juego {
     
     
 }
+
+module.exports = JuegoAhorcado;

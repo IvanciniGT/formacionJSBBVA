@@ -20,7 +20,7 @@ class JuegoFrioCaliente extends Juego {
             var numeroPropuesto=this.obtenerNumeroDelUsuario();
             // Comprobar si acetó o no.
             const distanciaAlNumero = Math.abs(numeroAAdivinar - numeroPropuesto);
-            var resultado;
+            var resultado="MuyFrio";
             if (distanciaAlNumero == 0){
                 acerto = true;
                 continue;

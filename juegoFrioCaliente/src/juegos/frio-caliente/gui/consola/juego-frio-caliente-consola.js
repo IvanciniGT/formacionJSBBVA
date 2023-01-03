@@ -1,13 +1,13 @@
 
 // Importaciones
-const prompt = require('prompt-sync');
-const JuegoFrioCaliente = require('../../JuegoFrioCaliente');
+const prompt = require('prompt-sync')();
+const JuegoFrioCaliente = require('../../juego-frio-caliente');
 const estadoPartida = require("../../../../estado-partida");
 
 class JuegoFrioCalienteConsola extends JuegoFrioCaliente{
     
     obtenerNumeroDelUsuario(){
-        prompt("Dame un numero: ");
+        return prompt("Dame un numero: ");
     }
     notificarResultado(resultado){
         console.log(resultado);
